@@ -7,9 +7,16 @@
     "github": "https://www.github.com/pixelkind"
   },
   {
-    "file": "experiments/lab1.js",
+    "file": "experiments/staticArt.js",
     "name": "First Generative Art piece",
     "description": "This was firstly done to get aquainted with p5.js again, since it has been a while since I've used it. So it's just a plus that it ended up looking somewhat interesting! :)",
+    "background": "",
+    "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
+  },
+  {
+    "file": "experiments/flowField.js",
+    "name": "Line art through a flow field",
+    "description": "Learning how to use flow fields ",
     "background": "",
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
   }
