@@ -8,36 +8,16 @@ let zoff = 0.001;
 let paused = false;
 const weight = 1.7;
 const synth = new Tone.Synth().toDestination();
-const bass = new Tone.Synth().toDestination();
-const counter = new Tone.Synth().toDestination();
 const now = Tone.now();
 let timeLastPlayed;
-let bar;
-const bMScale = ['B4', 'C#4', 'D4', 'E4', 'F#4', 'G4', 'A4','B3', 'C#3', 'D3', 'E3', 'F#3', 'G3', 'A5'];
+const bMScale = ['B4', 'C#4', 'D4', 'E4', 'F#4', 'G4', 'A4'];
 
 function setup() {
-  bar =1;
   createCanvas(500, 500);
   cols = floor(innerWidth / scl);
   rows = floor(innerHeight / scl);
   fr = createP('');
-  
-  timeLastPlayed = 0; 
-  const reverb = new Tone.Reverb(0.75).toDestination();
-  const bassEQ = new Tone.EQ3(10,3,-20);
-  const bassDist = new Tone.Distortion(0.8);
-  const volume = new Tone.Volume(-10);
-  synth.oscillator.type = 'sawtooth';
-  bass.oscillator.type = 'sawtooth';
-  counter.oscillator.type = 'square';
-
-
-  bass.connect(bassDist);
-  bass.connect(bassEQ);
-  bass.connect(reverb);
-  synth.connect(reverb);
-  counter.connect(reverb);
-  counter.connect(volume);
+  timeLastPlayed = 0;
   flowField = new Array(cols * rows);
 
   for (var i = 0; i < 1000; i++) {
@@ -52,23 +32,7 @@ function draw() {
   timeLastPlayed++;
  
   if (timeLastPlayed % 10 == 0) {
-    synth.triggerAttackRelease(bMScale[floor(random(0, 13))], '8n');
-  }
-  if(timeLastPlayed%40 == 0){
-    counter.triggerAttackRelease(bMScale[floor(random(6, 13))], '16n');
-  }
-  if(timeLastPlayed%80==0){
-    if(bar==1){
-      bass.triggerAttackRelease('B1', '2n'); 
-    }if(bar==2){
-      bass.triggerAttackRelease('D2', '2n');
-    }if(bar==3){
-      bass.triggerAttackRelease('A1', '2n'); 
-    }if(bar==4){
-      bass.triggerAttackRelease('G2', '2n'); 
-      bar = 0;
-    }
-    bar++;
+    synth.triggerAttackRelease(bMScale[floor(random(0, 6))], '8n');
   }
 
   for (let y = 0; y < rows; y++) {
