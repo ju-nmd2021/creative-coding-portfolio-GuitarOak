@@ -40,7 +40,7 @@ function goToExperiment(index) {
 
   const toneScript = document.createElement("script");
   toneScript.type = "text/javascript";
-  toneScript.src = "http://unpkg.com/tone";
+  toneScript.src = "https://unpkg.com/tone";
   toneScript.defer = true;
   bodyElement.appendChild(toneScript);
 

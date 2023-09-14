@@ -16,7 +16,7 @@ let bar;
 const bMScale = ['B4', 'C#4', 'D4', 'E4', 'F#4', 'G4', 'A4','B3', 'C#3', 'D3', 'E3', 'F#3', 'G3', 'A5'];
 
 function setup() {
-  bar =1;
+  bar = 1;
   createCanvas(500, 500);
   cols = floor(innerWidth / scl);
   rows = floor(innerHeight / scl);
