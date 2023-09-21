@@ -1,10 +1,17 @@
 [
   {
-    "file": "experiments/example.js",
-    "name": "Name of your experiment",
-    "description": "Explains the what and the why. What is the main idea? What is the purpose? Describes the coding process and implementation choices and gives a high level system overview.",
-    "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
-    "github": "https://www.github.com/pixelkind"
+    "file": "experiments/flowField.js",
+    "name": "Line art through a flow field",
+    "description": "Learning how to use flow fields.",
+    "background": "",
+    "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
+  },
+  {
+    "file": "experiments/flowFieldCopy.js",
+    "name": "Blood splatter",
+    "description": "A variation of the previous line art piece, I tried to emulate blood splatter.",
+    "background": "",
+    "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
   },
   {
     "file": "experiments/staticArt.js",
@@ -14,9 +21,9 @@
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
   },
   {
-    "file": "experiments/flowField.js",
-    "name": "Line art through a flow field",
-    "description": "Learning how to use flow fields.",
+    "file": "experiments/staticArtVariationDos.js",
+    "name": "Variation of my previous static Art piece",
+    "description": "Here I started with the code from the previous static art piece and tried to mess it up, and add advanced math calculations to get something cool. :)",
     "background": "",
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
   },

@@ -1,16 +1,12 @@
 let v = [];
 let particles = [];
 let flowField;
-let scl = 10;
+let scl = 40;
 let cols, rows;
-let inc = 0.1;
+let inc = 0.01;
 let zoff = 0.001;
 let paused = false;
 const weight = 1.7;
-const synth = new Tone.Synth().toDestination();
-const now = Tone.now();
-let timeLastPlayed;
-const bMScale = ['B4', 'C#4', 'D4', 'E4', 'F#4', 'G4', 'A4'];
 
 function setup() {
   createCanvas(500, 500);
@@ -20,23 +16,19 @@ function setup() {
   timeLastPlayed = 0;
   flowField = new Array(cols * rows);
 
-  for (var i = 0; i < 1000; i++) {
+  for (var i = 0; i < 15; i++) {
     particles[i] = new Particle();
   }
 
-  background(201);
+  background(255);
 }
 
 function draw() {
-  let yoff = 0;
-  timeLastPlayed++;
+  let yoff = 0.002;
  
-  if (timeLastPlayed % 10 == 0) {
-    synth.triggerAttackRelease(bMScale[floor(random(0, 6))], '8n');
-  }
 
   for (let y = 0; y < rows; y++) {
-    let xoff = 0;
+    let xoff = 0.001;
     for (let x = 0; x < cols; x++) {
       let index = (x + y * cols);
       let angle = noise(xoff, yoff, zoff) * TWO_PI;
@@ -59,7 +51,7 @@ function draw() {
 
 setTimeout(() => {
   noLoop();
-}, 50000);
+}, 7000);
 
 class Particle {
 
@@ -83,9 +75,11 @@ class Particle {
   }
 
   show() {
-    stroke(1, 1, random(0, (frameRate() * random(1, 8)) % 255), 4);
-    strokeWeight(weight);
+    stroke(random(80,255), 10, random(0,10), 255);
+    strokeWeight(weight*random(0.05,5));
+    if(floor(random(1,4)) == 1){
     line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
+  }
     this.updatePrev();
   }
 
@@ -125,7 +119,7 @@ class Particle {
 function keyPressed() {
   if (keyCode === 82) {
     clear();
-    background(201);
+    background(255);
   }
   if (keyCode === 32 && paused == false) {
     noLoop();
