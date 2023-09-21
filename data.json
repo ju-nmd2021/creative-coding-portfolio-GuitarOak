@@ -1,15 +1,37 @@
 [
   {
     "file": "experiments/flowField.js",
-    "name": "Line art through a flow field",
+    "name": "Line art through a flow field with generated music",
     "description": "Learning how to use flow fields.",
     "background": "",
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
   },
   {
-    "file": "experiments/flowFieldCopy.js",
-    "name": "Blood splatter",
+    "file": "experiments/bloodSplatter.js",
+    "name": "Blood splatter with blood music",
     "description": "A variation of the previous line art piece, I tried to emulate blood splatter.",
+    "background": "",
+    "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
+  },  
+  {
+    "file": "experiments/waterDrops.js",
+    "name": "Water running with rain music",
+    "description": "A variation of the previous blood splatter, I tried to emulate water running across a window. with accompanying music",
+    "background": "",
+    "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
+  },
+
+  {
+    "file": "experiments/staticAbstract.js",
+    "name": "Abstract art(?)",
+    "description": "Trying to make cool abstract stuff with a bunch of randomness and big numbers and iterations",
+    "background": "",
+    "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
+  },
+  {
+    "file": "experiments/staticAbstract2.js",
+    "name": "Abstract art variation",
+    "description": "Variation of the previous abstract art",
     "background": "",
     "github": "https://github.com/ju-nmd2021/creative-coding-portfolio-GuitarOak"
   },

@@ -8,6 +8,13 @@ let zoff = 0.001;
 let paused = false;
 const weight = 1.7;
 
+const synth = new Tone.Synth().toDestination();
+const now = Tone.now();
+let timeLastPlayed;
+const devilScale = ['C4', 'C#3', 'E3', 'F#4', 'G4', 'A4'];
+const noteLength = ['2n', '4n', '8n'];
+let velocity;
+
 function setup() {
   createCanvas(500, 500);
   cols = floor(innerWidth / scl);
@@ -15,6 +22,21 @@ function setup() {
   fr = createP('');
   timeLastPlayed = 0;
   flowField = new Array(cols * rows);
+
+  const reverb = new Tone.Reverb(1).toDestination();
+  const dist = new Tone.Distortion(1)
+  const dist2 = new Tone.Distortion(1)
+  const crusher = new Tone.BitCrusher(1);
+  const vol = new Tone.Volume(-30).toDestination();
+  const autoWah = new Tone.AutoWah(50, 5, 0).toMaster();
+  synth.oscillator.type = 'sawtooth';
+  synth.connect(autoWah);
+  synth.connect(dist);
+  synth.connect(dist2);
+  synth.connect(crusher);
+  synth.connect(reverb);
+  synth.connect(vol);
+  velocity = 0.05;
 
   for (var i = 0; i < 15; i++) {
     particles[i] = new Particle();
@@ -26,6 +48,14 @@ function setup() {
 function draw() {
   let yoff = 0.002;
  
+  if(timeLastPlayed%9==0){
+    synth.envelope.velocity = velocity;
+    synth.triggerAttackRelease(devilScale[(floor(random(0,5)))], noteLength[floor(random(0,2))]);
+    velocity += 0.05;
+    velocity = velocity%1;
+  }
+  timeLastPlayed++;
+
 
   for (let y = 0; y < rows; y++) {
     let xoff = 0.001;
@@ -51,7 +81,7 @@ function draw() {
 
 setTimeout(() => {
   noLoop();
-}, 7000);
+}, 15000);
 
 class Particle {
 

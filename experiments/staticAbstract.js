@@ -21,10 +21,10 @@ function setup() {
   
       for (let p = 0; p < 100; p++) {
         rotate((p*PI/5)%300);
-        fill(floor(random(0,50)), floor(random(50, 255)), floor(random(0, 225)), random(30,100));
+        fill(floor(random(50,255)), floor(random(0, 50)), floor(random(100, 250)), random(20,180));
         beginShape();
         vertex(random(random(0,150),random(0,200)), 0);
-        vertex(392, 400);
+        vertex(random(0,9), 400);
         vertex(random(30 * i, 400)%400, random(45 * p, 30 * p)%400);
         vertex(400, 400);
         endShape(CLOSE);
